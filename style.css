@@ -141,3 +141,14 @@ body { background-color: #f4f7f6; padding: 15px; }
     border-radius: 10px;
 }
 
+/* এটি আপনার পুরনো কোড, শুধু নিচের লাইনে pointer এবং position যোগ করুন */
+.product-card img { 
+    width: 100%; 
+    height: 300px; 
+    object-fit: cover; 
+    border-radius: 8px; 
+    margin-bottom: 10px; 
+    cursor: pointer;        /* এটি যোগ করুন */
+    position: relative;     /* এটি যোগ করুন */
+    z-index: 1;             /* এটি যোগ করুন */
+}

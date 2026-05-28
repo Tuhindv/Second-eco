@@ -49,3 +49,10 @@ products.forEach(product => {
 
 // ৩. কন্টেইনারে সব কার্ড পুশ করা
 container.innerHTML = cardsHTML;
+// লুপ শেষ হওয়ার পরে এটি বসান
+document.querySelectorAll('.product-img').forEach(img => {
+    img.addEventListener('click', function() {
+        const src = this.getAttribute('data-src');
+        openLightbox(src);
+    });
+});
