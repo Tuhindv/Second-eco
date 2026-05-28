@@ -1,154 +1,222 @@
-* { box-sizing: border-box; margin: 0; padding: 0; font-family: sans-serif; }
-body { background-color: #f4f7f6; padding: 15px; }
+/* Reset */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
 
-.product-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 10px;
+body{
+    background: #f4f7f6;
+    padding: 15px;
+}
+
+/* Product Container */
+.product-container{
     max-width: 1200px;
     margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px,1fr));
+    gap: 12px;
 }
 
-.product-card {
+/* Product Card */
+.product-card{
     background: #fff;
     border: 1px solid #ddd;
-    border-radius: 7px;
-    padding: 7px;
+    border-radius: 10px;
+
+    padding: 10px;
+
     display: flex;
     flex-direction: column;
+
+    transition: 0.3s;
 }
 
-.product-card img { width: 100%; height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 10px; }
-.product-name { font-size: 1.1em; margin-bottom: 8px; }
-.price-section { margin-bottom: 10px; }
-.price { font-weight: bold; font-size: 1.2em; }
-.old-price { text-decoration: line-through; color: #888; font-size: 0.9em; margin-left: 5px; }
-.discount { color: #27ae60; font-weight: bold; margin-left: 5px; }
-/* সাইজ বাটনের জন্য আপডেট */
-.size-selector {
-    display: flex;
-    flex-wrap: wrap; /* যদি বাটন বেশি হয় তবে নিচে নেমে আসবে */
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 15px;
-    .size-selector button {
-    flex: 1; /* বাটনগুলো যেন সমান জায়গা নিয়ে থাকে */
-    font-size: 11px; /* মোবাইলের জন্য ফন্ট একটু ছোট করা */
-}
+.product-card:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
 }
 
-.size-selector button {
-    padding: 6px 10px;
-    border: 1px solid #ddd;
-    background: #fff;
-    border-radius: 5px;
+/* Product Image */
+.product-card img{
+    width: 100%;
+    height: 300px;
+
+    object-fit: cover;
+
+    border-radius: 8px;
+
+    margin-bottom: 10px;
+
     cursor: pointer;
-    min-width: 35px; /* এটি বাটনগুলোকে সমান সাইজ করবে */
-    text-align: center;
+}
+
+/* Product Name */
+.product-name{
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+/* Price Section */
+.price-section{
+    margin-bottom: 12px;
+}
+
+.price{
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.old-price{
+    text-decoration: line-through;
+    color: #888;
+    margin-left: 5px;
+    font-size: 0.9rem;
+}
+
+.discount{
+    color: #27ae60;
+    margin-left: 5px;
+    font-weight: bold;
+}
+
+/* Size Selector */
+.size-selector{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    gap: 8px;
+
+    margin-bottom: 15px;
+}
+
+.size-selector small{
+    font-weight: bold;
+}
+
+.size-selector button{
+    padding: 6px 10px;
+
+    border: 1px solid #ddd;
+    background: white;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+
+    min-width: 35px;
+
     transition: 0.2s;
 }
 
-.size-selector button:hover {
-    background-color: #f0f0f0;
-    border-color: #6a11cb; /* আপনার বাটনের গ্রেডিয়েন্টের সাথে মিল রেখে কালার */
+.size-selector button:hover{
+    background: #f0f0f0;
+    border-color: #6a11cb;
 }
-.order-btn {
-    display: block;
-    text-align: center;
-    /* ছবির সাথে মিল রেখে পার্পল-টু-ব্লু গ্রেডিয়েন্ট */
-    background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%);
-    color: #ffffff;
-    padding: 12px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 600;
+
+/* Order Button */
+.order-btn{
     margin-top: auto;
-    transition: all 0.4s ease;
-    box-shadow: 0 4px 15px rgba(37, 117, 252, 0.4); /* নীল আভার শ্যাডো */
-    border: none;
-    cursor: pointer;
+
+    text-align: center;
+    text-decoration: none;
+
+    padding: 12px;
+
+    border-radius: 8px;
+
+    color: white;
+    font-weight: 600;
+
+    background: linear-gradient(90deg,#6a11cb 0%, #2575fc 100%);
+
+    transition: 0.3s;
+
+    box-shadow: 0 4px 15px rgba(37,117,252,0.4);
 }
 
-.order-btn:hover {
-    /* মাউস নিলে কালার কিছুটা ঘুরিয়ে দেওয়া */
-    background: linear-gradient(90deg, #2575fc 0%, #6a11cb 100%);
-    box-shadow: 0 6px 20px rgba(106, 17, 203, 0.5);
-    transform: translateY(-3px);
+.order-btn:hover{
+    background: linear-gradient(90deg,#2575fc 0%, #6a11cb 100%);
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 6px 20px rgba(106,17,203,0.5);
 }
 
-/* মোবাইলের জন্য ২ কলাম */
-/* মোবাইলের জন্য একদম পারফেক্ট সেটিংস */
-@media (max-width: 480px) {
-    .product-container {
-        grid-template-columns: 1fr 1fr; /* ২ কলাম */
+/* Mobile Responsive */
+@media(max-width: 480px){
+
+    .product-container{
+        grid-template-columns: 1fr 1fr;
         gap: 10px;
-        padding: 10px;
+        padding: 5px;
     }
 
-    .product-card {
-        padding: 10px;
-        border-radius: 10px;
-    }
-
-    .product-card img {
-        height: 140px !important; /* ছবি ছোট করে ব্যালেন্স করা হয়েছে */
-        margin-bottom: 8px;
-    }
-
-    .product-name {
-        font-size: 0.9em;
-        margin-bottom: 5px;
-        white-space: nowrap; /* নাম এক লাইনে রাখবে */
-        overflow: hidden;
-        text-overflow: ellipsis; /* বড় নাম হলে ডট ডট দেখাবে */
-    }
-
-    .price-section {
-        font-size: 0.85em;
-        margin-bottom: 8px;
-    }
-
-    .size-selector {
-        font-size: 0.8em;
-        margin-bottom: 8px;
-    }
-
-    .size-selector button {
-        padding: 2px 6px; /* বাটন ছোট করা হয়েছে */
-    }
-
-    .order-btn {
+    .product-card{
         padding: 8px;
-        font-size: 0.85em;
-        margin-top: auto;
+    }
+
+    .product-card img{
+        height: 140px;
+        margin-bottom: 8px;
+    }
+
+    .product-name{
+        font-size: 0.9rem;
+
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .price-section{
+        font-size: 0.85rem;
+        margin-bottom: 8px;
+    }
+
+    .size-selector{
+        gap: 5px;
+        margin-bottom: 8px;
+    }
+
+    .size-selector button{
+        padding: 3px 6px;
+        font-size: 11px;
+    }
+
+    .order-btn{
+        padding: 8px;
+        font-size: 0.85rem;
     }
 }
-/* লাইটবক্স ব্যাকগ্রাউন্ড */
-.lightbox {
+
+/* Lightbox */
+.lightbox{
     display: none;
+
     position: fixed;
+    inset: 0;
+
     z-index: 9999;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: rgba(0,0,0,0.85);
+
+    background: rgba(0,0,0,0.9);
+
     justify-content: center;
     align-items: center;
+
+    padding: 20px;
 }
 
-.lightbox img {
-    max-width: 90%;
-    max-height: 80%;
+/* Lightbox Image */
+.lightbox img{
+    max-width: 95%;
+    max-height: 90%;
+
+    object-fit: contain;
+
     border-radius: 10px;
-}
-
-/* এটি আপনার পুরনো কোড, শুধু নিচের লাইনে pointer এবং position যোগ করুন */
-.product-card img { 
-    width: 100%; 
-    height: 300px; 
-    object-fit: cover; 
-    border-radius: 8px; 
-    margin-bottom: 10px; 
-    cursor: pointer;        /* এটি যোগ করুন */
-    position: relative;     /* এটি যোগ করুন */
-    z-index: 1;             /* এটি যোগ করুন */
 }

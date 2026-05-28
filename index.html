@@ -1,27 +1,36 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Product Catalog</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+    <!-- Product Container -->
     <div class="product-container" id="productContainer"></div>
 
-    <div id="myLightbox" class="lightbox" onclick="this.style.display='none'">
-        <img id="lightboxImg" src="">
+    <!-- Lightbox -->
+    <div id="myLightbox" class="lightbox" onclick="closeLightbox()">
+        <img id="lightboxImg" src="" alt="Preview Image">
     </div>
 
     <script src="script.js"></script>
 
     <script>
-        // লাইটবক্স খোলার ফাংশনটি এখানে থাকতে হবে
+        // Open Lightbox
         function openLightbox(src) {
-            document.getElementById('lightboxImg').src = src;
-            document.getElementById('myLightbox').style.display = 'flex';
+            document.getElementById("lightboxImg").src = src;
+            document.getElementById("myLightbox").style.display = "flex";
+        }
+
+        // Close Lightbox
+        function closeLightbox() {
+            document.getElementById("myLightbox").style.display = "none";
         }
     </script>
+
 </body>
 </html>
