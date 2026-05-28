@@ -1,3 +1,4 @@
+// ১. প্রোডাক্ট লিস্ট
 const products = [
     { name: "Stridex Premium", oldPrice: 2999, newPrice: 1050, stock: 5, sizes: [6, 7, 9], img: "photo-1542291026-7eec264c27ff.jpg" },
     { name: "Sports Edition", oldPrice: 4000, newPrice: 1800, stock: 2, sizes: [7, 8, 10], img: "photo-1483985988355-763728e1935b.jpg" },
@@ -15,29 +16,23 @@ const products = [
     { name: "Sports Edition", oldPrice: 4000, newPrice: 1800, stock: 2, sizes: [7, 8, 10], img: "photo-1600185365926-3a2ce3cdb9eb.jpg" }
 ];
 
-// ১. প্রোডাক্ট লিস্ট
-
 const container = document.getElementById('productContainer');
-const whatsappNumber = "8801311657122"; // আপনার নাম্বার এখানে দিন
+const whatsappNumber = "8801311657122"; 
 
 let cardsHTML = "";
 
 // ২. প্রতিটি প্রোডাক্টের জন্য কার্ড তৈরি
 products.forEach(product => {
-    // ডিসকাউন্ট ক্যালকুলেশন
     const discount = Math.round(((product.oldPrice - product.newPrice) / product.oldPrice) * 100);
-    
-    // সাইজ বাটন তৈরি
     const sizeBtns = product.sizes.map(s => `<button>${s}</button>`).join('');
     
-    // হোয়াটসঅ্যাপ মেসেজ ফরম্যাট
-    const message = `হ্যালো, আমি এই পণ্যটি অর্ডার করতে চাই: ${product.name}। দাম: ৳${product.newPrice}। দয়া করে বিস্তারিত জানান।`;
+    const message = `হ্যালো, আমি এই পণ্যটি অর্ডার করতে চাই: ${product.name}। দাম: ৳${product.newPrice}।`;
     const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
 
-    // কার্ডের এইচটিএমএল ডিজাইন
+    // কার্ডের এইচটিএমএল ডিজাইন (এখানে onclick যোগ করা হয়েছে)
     cardsHTML += `
         <div class="product-card">
-            <img src="${product.img}" alt="${product.name}">
+            <img src="${product.img}" alt="${product.name}" onclick="openLightbox('${product.img}')" style="cursor:pointer;">
             <h3 class="product-name">${product.name}</h3>
             <div class="price-section">
                 <span class="price">৳${product.newPrice}</span>

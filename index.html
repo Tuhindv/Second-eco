@@ -8,9 +8,20 @@
 </head>
 <body>
 
-    <div class="product-container" id="productContainer">
-        </div>
+    <div class="product-container" id="productContainer"></div>
+
+    <div id="myLightbox" class="lightbox" onclick="this.style.display='none'">
+        <img id="lightboxImg" src="">
+    </div>
 
     <script src="script.js"></script>
+
+    <script>
+        // লাইটবক্স খোলার ফাংশনটি এখানে থাকতে হবে
+        function openLightbox(src) {
+            document.getElementById('lightboxImg').src = src;
+            document.getElementById('myLightbox').style.display = 'flex';
+        }
+    </script>
 </body>
 </html>
