@@ -31,6 +31,10 @@ body { background-color: #f4f7f6; padding: 15px; }
     align-items: center;
     gap: 8px;
     margin-bottom: 15px;
+    .size-selector button {
+    flex: 1; /* বাটনগুলো যেন সমান জায়গা নিয়ে থাকে */
+    font-size: 11px; /* মোবাইলের জন্য ফন্ট একটু ছোট করা */
+}
 }
 
 .size-selector button {
