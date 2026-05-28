@@ -24,9 +24,30 @@ body { background-color: #f4f7f6; padding: 15px; }
 .price { font-weight: bold; font-size: 1.2em; }
 .old-price { text-decoration: line-through; color: #888; font-size: 0.9em; margin-left: 5px; }
 .discount { color: #27ae60; font-weight: bold; margin-left: 5px; }
-.size-selector { margin-bottom: 15px; font-size: 0.9em; }
-.size-selector button { margin-right: 5px; padding: 3px 8px; cursor: pointer; }
+/* সাইজ বাটনের জন্য আপডেট */
+.size-selector {
+    display: flex;
+    flex-wrap: wrap; /* যদি বাটন বেশি হয় তবে নিচে নেমে আসবে */
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 15px;
+}
 
+.size-selector button {
+    padding: 6px 10px;
+    border: 1px solid #ddd;
+    background: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    min-width: 35px; /* এটি বাটনগুলোকে সমান সাইজ করবে */
+    text-align: center;
+    transition: 0.2s;
+}
+
+.size-selector button:hover {
+    background-color: #f0f0f0;
+    border-color: #6a11cb; /* আপনার বাটনের গ্রেডিয়েন্টের সাথে মিল রেখে কালার */
+}
 .order-btn {
     display: block;
     text-align: center;
