@@ -73,37 +73,49 @@ body { background-color: #f4f7f6; padding: 15px; }
 }
 
 /* মোবাইলের জন্য ২ কলাম */
+/* মোবাইলের জন্য একদম পারফেক্ট সেটিংস */
 @media (max-width: 480px) {
     .product-container {
-        grid-template-columns: 1fr 1fr;
-        gap: 8px; /* গ্যাপ একটু কমিয়ে জায়গা বাড়ানো হয়েছে */
-        padding: 5px;
+        grid-template-columns: 1fr 1fr; /* ২ কলাম */
+        gap: 10px;
+        padding: 10px;
     }
 
     .product-card {
-        padding: 8px;
-        height: 100%; /* কার্ড যেন কন্টেন্টের সাথে সামঞ্জস্যপূর্ণ থাকে */
+        padding: 10px;
+        border-radius: 10px;
     }
 
     .product-card img {
-        height: 150px !important; /* মোবাইলের জন্য উচ্চতা আরও একটু কমিয়ে দিলে ভারসাম্য আসবে */
+        height: 140px !important; /* ছবি ছোট করে ব্যালেন্স করা হয়েছে */
         margin-bottom: 8px;
     }
 
     .product-name {
-        font-size: 0.8em; /* টেক্সট ছোট করা হলো যাতে লাইন ব্রেক না হয় */
-        min-height: 2.4em; /* নাম লম্বা হলে যেন সব কার্ড একই উচ্চতার হয় */
+        font-size: 0.9em;
         margin-bottom: 5px;
+        white-space: nowrap; /* নাম এক লাইনে রাখবে */
+        overflow: hidden;
+        text-overflow: ellipsis; /* বড় নাম হলে ডট ডট দেখাবে */
     }
 
     .price-section {
-        margin-bottom: 5px;
         font-size: 0.85em;
+        margin-bottom: 8px;
+    }
+
+    .size-selector {
+        font-size: 0.8em;
+        margin-bottom: 8px;
+    }
+
+    .size-selector button {
+        padding: 2px 6px; /* বাটন ছোট করা হয়েছে */
     }
 
     .order-btn {
-        padding: 6px;
-        font-size: 0.75em; /* বাটন ছোট করা হলো */
-        margin-top: 5px;
+        padding: 8px;
+        font-size: 0.85em;
+        margin-top: auto;
     }
 }
